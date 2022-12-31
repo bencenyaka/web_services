@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track{
+    background: transparent;
+    margin-block: 30px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #a8a8a8;
+    border-radius: 4px;
+    border: 3px solid transparent;
+}
+
+
+body{
+    background-color: #1a2530;
+    overflow-y: overlay;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background: #1a2530; 
+    position: fixed;
+}
+
+header img{
+    padding: 10px;
+    margin-left: 50px;
+}
+
+header nav{
+    width: 100%;
+    height: 100%;
+}
+
+header nav ul{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    margin-right: 100px;
+}
+
+header nav ul li{
+    height: 80px;
+    line-height: 60px;
+    list-style: none;
+    display: inline-block;
+    padding: 0px 30px;
+}
+
+header nav ul li a{
+    display: inline-block;
+    color: rgb(210, 210, 210);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover{
+    background-color: rgb(255, 187, 0);
+    color: #141b23;
+}
+
+/* 1.rész */
+
+#bemutat{
+    min-height: 100vh;
+    background-color: #283747;
+}
+
+#bemutat .container{
+    display: flex;
+    height: 100vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#bemutat .container .text{
+    text-align: center;
+    width: 45%;
+}
+
+#bemutat .container .text h1{
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+#bemutat .container .text p{
+    font-size: 16px;
+    color: rgb(200, 200, 200);
+}
+
+#bemutat .container .text button{
+    margin: 15px 0;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    background: rgb(255, 187, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#bemutat .container .img{
+    width: 50%;
+}
+
+#bemutat .container .img img{
+    height: calc(700px - 80px);
+    display: block;
+}
+
+/* 2.rész */
+
+#szolgal{
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 12vh;
+}
+
+#szolgal h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+#szolgal hr{
+    margin: 0 25%;
+    border-color: #000000;
+    margin-bottom: 2vh;
+}
+
+#szolgal ul{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 10%;
+}
+
+#szolgal ul li{
+    width: 100%;
+    list-style: none;
+    margin: 1vh 2vh;
+    background: #283747;
+    padding: 4vh;
+    text-align: center;
+}
+
+#szolgal ul li h2{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+#szolgal ul li img{
+    height: 30vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+#szolgal ul li p{
+    color: white;
+}
+
+/* 3.rész */
+
+#galeria{
+    min-height: 100vh;
+    background-color: rgb(255, 187, 0);
+    padding-top: 12vh;
+    width: 100%;
+}
+
+#galeria h1{
+    font-size: 50px;
+    text-align: center;
+    color: black;
+}
+
+#galeria hr{
+    margin: 0 25%;
+    border-color: #000000;
+    margin-bottom: 2vh;
+}
+
+#galeria .galeria-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#galeria .galeria-div img{
+    height: 35vh;
+    padding: 2vh;
+}
+
+/* 4.rész */
+
+#kapcsolat{
+    min-height: 100vh;
+    background-color: #141b23;
+    padding-top: 12vh;
+}
+
+#kapcsolat h1{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+#kapcsolat hr{
+    margin: 0 25%;
+}
+
+#kapcsolat form
+{
+	padding: 3vh 2vh;
+    color: #ffff;
+    margin: 2vh 25% 0 25%;
+}
+#kapcsolat form label
+{
+    font-size: 18px;
+    display: block;
+}
+#kapcsolat form input,  
+#kapcsolat form textarea
+{
+    margin-bottom: 2vh;
+    width: 98%;
+    border: 2px solid #283747;
+    padding: 1.3vh 1%;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+#kapcsolat form input::placeholder{
+    font-size: 16px;
+}
+
+#kapcsolat form textarea::placeholder{
+    font-size: 16px;
+}
+
+#kapcsolat form textarea
+{
+    height: 13vh;
+    resize: none;
+}
+#inName
+{
+    max-width: 32vh;
+}
+#inEmail
+{
+    max-width: 53vh;
+}
+#kapcsolat form button
+{
+    cursor: pointer;
+    padding: 1vh 3vh;
+    background: #283747;
+    color: #fff;
+    transition: background 0.3s;
+    border: 0;
+    font-size: 150%;
+    border-radius: 5px;
+}
+#kapcsolat form button:hover
+{
+    background: rgb(255, 187, 0);
+    color: #000000;
+}
+#kapcsolat form input[type=submit]:hover
+{
+    background: #c3beb8;
+}
+#kapcsolat p.success
+{
+    background: #d4edbb;
+    color: #6cab56;
+    border: 3px solid #beddb4;
+    border-radius: 10px;
+    padding: 1vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1vh;
+}
+#kapcsolat p.error
+{
+    background: #e7c3c3;
+    color: #ac5f5f;
+    border: 3px solid #df7e7e;
+    border-radius: 10px;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1vh;
+}
+
+#kapcsolat span{
+    color: red;
+}
