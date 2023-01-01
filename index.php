@@ -86,17 +86,78 @@
         </div>
     </section>
 
+    <section id="projektek">
+        <h1>Projektek</h1>
+        <hr>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Portfólió</h2>
+                <?php          
+                    $text= file_get_contents("text/portfolio.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>
+                <p class="link">Megtekintéshez kattintson <a href="https://bencenyaka.github.io/personal_portfolio/" target="blank"><span>ide</span></a></p>
+            </div>
+            <div class="grid-item">
+                <h2>Időjárás App</h2>
+                <?php          
+                    $text= file_get_contents("text/idoj.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>
+                <p class="link">Megtekintéshez kattintson <a href="https://bencenyaka.github.io/weather_app/" target="blank"><span>ide</span></a></p>
+            </div>
+            <div class="grid-item">
+                <h2>Madeira</h2>
+                <?php          
+                    $text= file_get_contents("text/madeira.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>
+                <p class="link">Megtekintéshez kattintson <a href="https://www.youtube.com/watch?v=NcBjx_eyvxc" target="blank"><span>ide</span></a></p>
+            </div>
+            <div class="grid-item">
+                <h2>Videó - MP3 letöltő</h2>
+                <?php          
+                    $text= file_get_contents("text/vidmp3.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>
+                <p class="link">Megtekintéshez kattintson <a href="https://dark-elk-kilt.cyclic.app/" target="blank"><span>ide</span></a></p>
+            </div>
+            <div class="grid-item">
+                <h2>Francia Alpok</h2>
+                <?php          
+                    $text= file_get_contents("text/fralp.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>
+                <p class="link">Megtekintéshez kattintson <a href="https://www.instagram.com/french_alps/" target="blank"><span>ide</span></a></p>
+            </div>
+            <div class="grid-item">
+                <h2>Horvátország</h2>
+                <?php          
+                    $text= file_get_contents("text/horv.txt");
+                    echo'
+                    <p>'. $text .'</p>';
+                ?>     
+                <p class="link">Megtekintéshez kattintson <a href="https://www.youtube.com/watch?v=eZZLhNV3I50" target="blank"><span>ide</span></a></p>
+            </div>
+        </div>
+    </section>
+
     <section id="kapcsolat">
         <h1>Kapcsolat</h1>
         <hr>
         <form method="post" action="index.php">
             <div>
                 <label for="inName">Teljes név:<span>*</span></label>
-                <input type="text" name="name" placeholder="Some Body">
+                <input type="text" name="name" placeholder="Arató András">
             </div>
             <div>
                 <label for="inEmail">Email:<span>*</span></label>
-                <input type="email" name="email" placeholder="somebody@host.com">
+                <input type="email" name="email" placeholder="aratoandras@host.com">
             </div>
             <div>
                 <label for="InPhonenumber">Telefonszám:</label>
@@ -104,10 +165,10 @@
             </div>
             <div>
                 <label for="InMessage">Üzenet:<span>*</span></label>
-                <textarea type="text"  name="message" placeholder="Write your message here."></textarea>
+                <textarea type="text"  name="message" placeholder="Az üzenetét ebbe a mezőbe írja."></textarea>
             </div>
             <div>
-                <p><sup><span>*</span><span>mandatory</span></sup></p>
+                <p><sup><span>*</span><span>kötelező</span></sup></p>
             </div>
             <div style="text-align:center;">
                 <button name="sendMessage">Küldés</button>
@@ -139,18 +200,18 @@
 
                 if(strlen($name) < 1)
                 {
-                    $error = "Please fill it with your name.";
+                    $error = "A rendes nevével töltse ki a mezőt.";
                 }
                 if(strlen($email) < 1)
                 {
-                    $error = "Please fill it with your email.";
+                    $error = "A rendes email címével töltse ki a mezőt.";
                 }
                 if(strlen($message) < 1)
                 {
-                    $error = "Please fill it with your message.";
+                    $error = "Üzenetével töltse ki a mezőt.";
                 }
                 if(is_numeric($phone_number) == false && empty($phone_number) == false){
-                    $error = "Please fill it with your phone number.";
+                    $error = "A rendes telefonszámával töltse ki a mezőt.";
                 }
                 if($error)
                 {
@@ -159,7 +220,7 @@
                     $vPhonenumber = $phone_number;
                     $vMessage = $message;
                     
-                    echo '<p class="error">Error! '.$error.'</p>';
+                    echo '<p class="error">Hiba! '.$error.'</p>';
                 }
                 else
                 {
@@ -174,7 +235,7 @@
                     $query = $db->prepare($sql);
                     $query->execute($values);
 
-                    echo '<p class="success">Successful filling.</p>';
+                    echo '<p class="success">Sikeres kitöltés.</p>';
 
                     /* File kiírás */
 

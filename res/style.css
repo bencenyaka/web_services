@@ -216,6 +216,70 @@ header nav ul li a:hover{
 
 /* 4.rész */
 
+#projektek{
+    min-height: 100vh;
+    background-color: rgb(185, 185, 185);
+    padding-top: 12vh;
+    width: 100%;
+}
+
+#projektek h1{
+    font-size: 50px;
+    text-align: center;
+    color: black;
+}
+
+#projektek hr{
+    margin: 0 25%;
+    border-color: #000000;
+    margin-bottom: 2vh;
+}
+
+#projektek .grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    background: transparent;
+    padding: 1vh;
+    height: 70vh;
+    gap: 3vh;
+}
+
+#projektek .grid-container .grid-item{
+    background-color: #1a2530;
+    border: 3px solid #283747;
+    padding: 1vh;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35vh;
+}
+
+#projektek .grid-container .grid-item h2{
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+}
+
+#projektek .grid-container .grid-item p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+#projektek .grid-container .grid-item .link{
+    padding: 1vh;
+    margin-top: auto;
+}
+
+#projektek .grid-container .grid-item .link a{
+    color: #5380af;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 5.rész */
+
 #kapcsolat{
     min-height: 100vh;
     background-color: #141b23;
@@ -306,6 +370,7 @@ header nav ul li a:hover{
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 #kapcsolat p.error
 {
@@ -320,6 +385,7 @@ header nav ul li a:hover{
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 #kapcsolat span{
