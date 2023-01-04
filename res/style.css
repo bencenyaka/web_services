@@ -28,6 +28,7 @@
 body{
     background-color: #1a2530;
     overflow-y: overlay;
+    overflow-x: hidden;
 }
 
 header{
@@ -36,6 +37,7 @@ header{
     height: 80px;
     background: #1a2530; 
     position: fixed;
+    z-index: 200;
 }
 
 header img{
@@ -53,7 +55,7 @@ header nav ul{
     margin: 0;
     padding: 0;
     text-align: right;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 header nav ul li{
@@ -61,7 +63,7 @@ header nav ul li{
     line-height: 60px;
     list-style: none;
     display: inline-block;
-    padding: 0px 30px;
+    padding: 0px 15px;
 }
 
 header nav ul li a{
@@ -118,6 +120,10 @@ header nav ul li a:hover{
     font-size: 20px;
     border-radius: 30px;
     background: rgb(255, 187, 0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     border: none;
     cursor: pointer;
 }
@@ -142,6 +148,7 @@ header nav ul li a:hover{
 #szolgal h1{
     font-size: 50px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #szolgal hr{
@@ -195,6 +202,7 @@ header nav ul li a:hover{
     font-size: 50px;
     text-align: center;
     color: black;
+    text-transform: uppercase;
 }
 
 #galeria hr{
@@ -207,11 +215,17 @@ header nav ul li a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 35vh;
 }
 
 #galeria .galeria-div img{
     height: 35vh;
     padding: 2vh;
+    transition: ease-in-out 0.3s;
+}
+
+#galeria .galeria-div img:hover{
+    transform: scale(1.1);
 }
 
 /* 4.rész */
@@ -227,6 +241,7 @@ header nav ul li a:hover{
     font-size: 50px;
     text-align: center;
     color: black;
+    text-transform: uppercase;
 }
 
 #projektek hr{
@@ -290,6 +305,7 @@ header nav ul li a:hover{
     font-size: 50px;
     text-align: center;
     color: white;
+    text-transform: uppercase;
 }
 
 #kapcsolat hr{
@@ -362,32 +378,50 @@ header nav ul li a:hover{
 }
 #kapcsolat p.success
 {
-    background: #d4edbb;
-    color: #6cab56;
+    text-align: center;
+    background-color: #6cab56;
+    color: #d4edbb;
     border: 3px solid #beddb4;
     border-radius: 10px;
     padding: 1vh;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin: 1vh 30%;
 }
 #kapcsolat p.error
 {
     background: #e7c3c3;
-    color: #ac5f5f;
+    background-color: #a82e2e;
+    color: #e7c3c3;
     border: 3px solid #df7e7e;
     border-radius: 10px;
-    padding-left: 1vh;
-    padding-right: 1vh;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    padding: 1vh;
+    margin: 1vh 30%;
 }
 
 #kapcsolat span{
     color: red;
+}
+
+/* footer */
+
+footer{
+    height: 8vh;
+    margin: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+footer p{
+    padding: 3px;
+}
+
+footer p a{
+    color: #5380af;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer #email{
+    color: #669fdc;
+    font-weight: 400;
+    text-decoration: none;
 }
