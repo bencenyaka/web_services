@@ -18,8 +18,9 @@
 <body>
 
     <header>
-        <img src="media/logo.png">
+        <a id="index" href="index.php"><img src="media/logo.png"></a>
         <?php include('res/navigation.php'); ?>
+        <a id="kapcs" href="kapcsolat.php">Kapcsolat</a>
     </header>
 
     <section id="bemutat">
@@ -103,6 +104,7 @@
                 ?>
                 <p class="link">Megtekintéshez kattintson <a href="https://bencenyaka.github.io/personal_portfolio/" target="blank"><span>ide</span></a></p>
             </div>
+
             <div class="grid-item">
                 <h2>Időjárás App</h2>
                 <?php          
@@ -112,6 +114,7 @@
                 ?>
                 <p class="link">Megtekintéshez kattintson <a href="https://bencenyaka.github.io/weather_app/" target="blank"><span>ide</span></a></p>
             </div>
+
             <div class="grid-item">
                 <h2>Madeira</h2>
                 <?php          
@@ -121,8 +124,9 @@
                 ?>
                 <p class="link">Megtekintéshez kattintson <a href="https://www.youtube.com/watch?v=NcBjx_eyvxc" target="blank"><span>ide</span></a></p>
             </div>
+
             <div class="grid-item">
-                <h2>Videó - MP3 letöltő</h2>
+                <h2>Videó - MP3</h2>
                 <?php          
                     $text= file_get_contents("text/vidmp3.txt");
                     echo'
@@ -130,6 +134,7 @@
                 ?>
                 <p class="link">Megtekintéshez kattintson <a href="https://dark-elk-kilt.cyclic.app/" target="blank"><span>ide</span></a></p>
             </div>
+
             <div class="grid-item">
                 <h2>Francia Alpok</h2>
                 <?php          
@@ -139,6 +144,7 @@
                 ?>
                 <p class="link">Megtekintéshez kattintson <a href="https://www.instagram.com/french_alps/" target="blank"><span>ide</span></a></p>
             </div>
+
             <div class="grid-item">
                 <h2>Horvátország</h2>
                 <?php          
@@ -150,152 +156,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
-    </script>
-
-    <section id="kapcsolat">
-        <h1>Kapcsolat</h1>
-        <hr>
-        <form method="post" action="index.php">
-            <div>
-                <label for="inName">Teljes név:<span>*</span></label>
-                <input type="text" name="name" placeholder="Arató András">
-            </div>
-            <div>
-                <label for="inEmail">Email:<span>*</span></label>
-                <input type="email" name="email" placeholder="aratoandras@host.com">
-            </div>
-            <div>
-                <label for="InPhonenumber">Telefonszám:</label>
-                <input type="tel" name="phone_number" placeholder="01234567891">
-            </div>
-            <div>
-                <label for="InMessage">Üzenet:<span>*</span></label>
-                <textarea type="text"  name="message" placeholder="Az üzenetét ebbe a mezőbe írja."></textarea>
-            </div>
-            <div>
-                <p><sup><span>*</span><span>kötelező</span></sup></p>
-            </div>
-            <div style="text-align:center;">
-                <button name="sendMessage">Küldés</button>
-            </div>
-        </form>
-
-        <?php
-
-            $databaseName = "database";
-            $databaseUser = "admin";
-            $databasePsw = "admin";
-                        
-            $dsn = "mysql:host=localhost;dbname=". $databaseName .";charset=utf8mb4";
-            $db = new PDO($dsn, $databaseUser, $databasePsw);
-
-            $vName = "";
-            $vEmail = "";
-            $vMessage = "";
-            $vPhonenumber = 0;
-
-            if(isset($_POST['sendMessage']))
-            {
-                $name = trim($_POST['name']);
-                $email = trim($_POST['email']);
-                $phone_number = $_POST['phone_number'];
-                $message = trim($_POST['message']);
-
-                $error = false;
-
-                if(strlen($name) < 1)
-                {
-                    $error = "A rendes nevével töltse ki a mezőt.";
-                }
-                if(strlen($email) < 1)
-                {
-                    $error = "A rendes email címével töltse ki a mezőt.";
-                }
-                if(strlen($message) < 1)
-                {
-                    $error = "Üzenetével töltse ki a mezőt.";
-                }
-                if(is_numeric($phone_number) == false && empty($phone_number) == false){
-                    $error = "A rendes telefonszámával töltse ki a mezőt.";
-                }
-                if($error)
-                {
-                    $vName = $name;
-                    $vEmail = $email;
-                    $vPhonenumber = $phone_number;
-                    $vMessage = $message;
-
-                    echo '<script type="text/javascript">
-                        $(document).ready(function() {
-                            swal({
-                                title: "Hiba!",
-                                text: "'.$error.'",
-                                icon: "error",
-                                button: "Ok",
-                                timer: 3000
-                            });
-                        });
-                    </script>';
-
-                    /*echo '<script>alert("Hiba! '.$error.'");</script>'; */
-                    /* echo '<p class="success">Sikeres kitöltés.</p>' */
-                }
-                else
-                {
-                    $sql = "INSERT INTO data VALUES(NULL, :name, :email, :phone_number, :message)";
-                    $values = [
-                        'name' => $name,
-                        'email' => $email,
-                        'phone_number' => $phone_number,
-                        'message' => $message,
-                    ];
-
-                    $query = $db->prepare($sql);
-                    $query->execute($values);
-
-                    echo '<script type="text/javascript">
-                        $(document).ready(function() {
-                            swal({
-                                title: "Siker!",
-                                text: "Sikeres kitöltés.",
-                                icon: "success",
-                                button: "Ok",
-                                timer: 3000
-                            });
-                        });
-                    </script>';
-
-                    /* echo '<script>alert("Sikeres kitöltés.");</script>'; */
-
-                    /* File kiírás */
-
-                    $file = fopen("contacts.txt", "a") or die("Unable to open this file.");
-                    $mesfile = fopen("messages.txt", "a") or die("Unable to open this file.");
-                    
-                    $txt = $name . " | " . $email . " | " . $phone_number . "\n\n";
-                    $mestxt = $name . " | " . $message . "\n\n";
-
-                    fwrite($file, $txt);
-                    
-                    fwrite($mesfile, $mestxt);
-                    
-                    fclose($file);
-                    fclose($mesfile);
-
-                }
-            }
-
-        ?>
-    </section>
-
-    <footer>
-        <p>Partnerünk: <a href="http://localhost/beadando/index.php" target="blank">Ide kattints</a><br>
-        <a id="email" href="mailto:nemail@example.com">nemail@example.com</a></p>
-    </footer>
 </body>
 </html>

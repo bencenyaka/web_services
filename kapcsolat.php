@@ -18,8 +18,9 @@
 <body>
 
     <header>
-        <img src="media/logo.png">
-        <?php include('res/navigation.php'); ?>
+        <a id="index" href="index.php"><img src="media/logo.png"></a>
+        <hr style="width:80%; border:none;">
+        <a id="kapcs" href="kapcsolat.php">Kapcsolat</a>
     </header>
 
     <script>
@@ -28,10 +29,12 @@
         }
     </script>
 
+    <!-- oldal ujratoltes -->
+
     <section id="kapcsolat">
         <h1>Kapcsolat</h1>
         <hr>
-        <form method="post" action="index.php">
+        <form method="post" action="kapcsolat.php">
             <div>
                 <label for="inName">Teljes név:<span>*</span></label>
                 <input type="text" name="name" placeholder="Arató András">
@@ -165,8 +168,10 @@
     </section>
 
     <footer>
-        <p>Partnerünk: <a href="http://localhost/beadando/index.php" target="blank">Ide kattints</a><br>
-        <a id="email" href="mailto:nemail@example.com">nemail@example.com</a></p>
+        <div class="kapcsolat-container">
+            <div class="partner"><p>Partnerünk: <a href="http://localhost/beadando/index.php" target="blank">Ide kattints</a></p></div> 
+            <div class="email"><a id="email" href="mailto:nemail@example.com">email@example.com</a></div> 
+        </div>
     </footer>
 </body>
 </html>

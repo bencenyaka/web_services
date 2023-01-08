@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar{
-    width: 8px;
+    width: 5px;
     background: transparent;
 }
 
@@ -19,11 +19,10 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #a8a8a8;
+    background-color: #999999;
     border-radius: 4px;
     border: 3px solid transparent;
 }
-
 
 body{
     background-color: #1a2530;
@@ -43,6 +42,21 @@ header{
 header img{
     padding: 10px;
     margin-left: 50px;
+    height: 80px;
+}
+
+header #kapcs{
+    height: 40px;
+    line-height: 20px;
+    margin: 20px 50px 20px 0px;
+    padding: 10px;
+    border-radius: 30px;
+    background: rgb(255, 187, 0);
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    text-decoration: none;
+    color: #000000;
 }
 
 header nav{
@@ -54,8 +68,7 @@ header nav ul{
     height: 100%;
     margin: 0;
     padding: 0;
-    text-align: right;
-    margin-right: 50px;
+    text-align: center;
 }
 
 header nav ul li{
@@ -82,10 +95,14 @@ header nav ul li a:hover{
     color: #141b23;
 }
 
+section{
+    width: 100%;
+}
+
 /* 1.rész */
 
 #bemutat{
-    min-height: 100vh;
+    height: 100vh;
     background-color: #283747;
 }
 
@@ -120,10 +137,6 @@ header nav ul li a:hover{
     font-size: 20px;
     border-radius: 30px;
     background: rgb(255, 187, 0);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
     border: none;
     cursor: pointer;
 }
@@ -140,7 +153,7 @@ header nav ul li a:hover{
 /* 2.rész */
 
 #szolgal{
-    min-height: 100vh;
+    height: 100vh;
     background-color: white;
     padding-top: 12vh;
 }
@@ -162,6 +175,7 @@ header nav ul li a:hover{
     justify-content: center;
     width: 80%;
     margin: 0 10%;
+    height: 70vh;
 }
 
 #szolgal ul li{
@@ -192,7 +206,7 @@ header nav ul li a:hover{
 /* 3.rész */
 
 #galeria{
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(255, 187, 0);
     padding-top: 12vh;
     width: 100%;
@@ -231,7 +245,7 @@ header nav ul li a:hover{
 /* 4.rész */
 
 #projektek{
-    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(185, 185, 185);
     padding-top: 12vh;
     width: 100%;
@@ -296,7 +310,7 @@ header nav ul li a:hover{
 /* 5.rész */
 
 #kapcsolat{
-    min-height: 100vh;
+    height: 100%;
     background-color: #141b23;
     padding-top: 12vh;
 }
@@ -404,24 +418,160 @@ header nav ul li a:hover{
 /* footer */
 
 footer{
-    height: 8vh;
+    height: 100%;
     margin: 10px 0;
-    text-align: center;
     color: #fff;
 }
 
-footer p{
+footer .kapcsolat-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+footer .kapcsolat-container .partner{
+    width: 100%;
     padding: 3px;
 }
 
-footer p a{
+footer .kapcsolat-container .partner a{
     color: #5380af;
     font-weight: bold;
     text-decoration: none;
 }
 
-footer #email{
+footer .kapcsolat-container .email{
+    width: 100%;
+}
+
+footer .kapcsolat-container .email #email{
     color: #669fdc;
     font-weight: 400;
     text-decoration: none;
+}
+
+@media (max-width:1250px){
+    #bemutat .container .img img{
+        height: 500px;
+    }
+    #szolgal ul li img{
+        height: 20vh;
+    }
+    #projektek .grid-container .grid-item h2{
+        font-size: 20px;
+    }
+    #projektek .grid-container .grid-item p{
+        font-size: 14px;
+        font-weight: 300;
+    }
+    #projektek .grid-container .grid-item .link{
+        padding: 1vh;
+        margin-top: auto;
+    }
+}
+
+@media (max-width:1000px){
+    body{
+        overflow: auto;
+    }
+    header{
+        display: block;
+        height: 100%;
+        position: relative;
+    }
+    header img{
+        display: block;
+        margin: auto;
+    }
+    header #kapcs{
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: 120px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    header nav ul li{
+        display: block;
+    }
+    header nav ul li a{
+        width: 100%;
+    }
+    #bemutat{
+        height: auto;
+        padding-top: 1vh;
+    }
+    #bemutat .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        width: 100%;
+    }
+    #bemutat .container .text{
+        width: 100%;
+        margin: auto;
+    }
+    #bemutat .container .img{
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        display: flex;
+    }
+    #bemutat .container .img img{
+        width: 50%;
+        height: auto;
+    }
+    #szolgal{
+        height: auto;
+        padding-top: 1vh;
+    }    
+    #szolgal ul{
+        display: block;
+        height: 100%;
+        margin: auto;
+    }
+    #galeria{
+        height: auto;
+        padding-top: 1vh;
+    }
+    #galeria .galeria-div{
+        display: grid;
+        height: 100%;
+    }
+    #galeria .galeria-div a{
+        margin: auto;
+    }
+    #projektek{
+        height: auto;
+        padding-top: 1vh;
+    }
+    #projektek .grid-container{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        height: 100%;
+    }
+    #kapcsolat{
+        height: auto;
+        padding-top: 1vh;
+    }
+}
+
+@media (max-width:500px){
+    #szolgal h1{
+        font-size: 30px;
+    }
+    #szolgal ul{
+        width: 98%;
+        margin: 0;
+    }
+    #szolgal ul li{
+        margin: 1vh 1%;
+    }
+    #galeria .galeria-div img{
+        height: 25vh;
+        padding: 1vh;
+    }
 }
