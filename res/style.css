@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -19,7 +28,7 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #999999;
+    background-color: #717171;
     border-radius: 4px;
     border: 3px solid transparent;
 }
@@ -97,16 +106,25 @@ header nav ul li a:hover{
 
 section{
     width: 100%;
+    animation: transitionIn 2000ms;
 }
 
 /* 1.rész */
 
 #bemutat{
     height: 100vh;
-    background-color: #283747;
+    /*background-image: /*#283747 url('media/back.jpg');*/
+    background-image: url('../media/back3.jpg');
+    transform: scaleX(-1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-attachment: fixed;*/
+    background-color: #141b23;
 }
 
 #bemutat .container{
+    transform: scaleX(-1);
     display: flex;
     height: 100vh;
     width: 80%;
@@ -207,7 +225,7 @@ section{
 
 #galeria{
     height: 100vh;
-    background-color: rgb(255, 187, 0);
+    background-color: #283747;
     padding-top: 12vh;
     width: 100%;
 }
@@ -215,13 +233,13 @@ section{
 #galeria h1{
     font-size: 50px;
     text-align: center;
-    color: black;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 #galeria hr{
     margin: 0 25%;
-    border-color: #000000;
+    border-color: #ffffff;
     margin-bottom: 2vh;
 }
 
@@ -390,7 +408,7 @@ section{
 {
     background: #c3beb8;
 }
-#kapcsolat p.success
+/*#kapcsolat p.success
 {
     text-align: center;
     background-color: #6cab56;
@@ -410,7 +428,7 @@ section{
     padding: 1vh;
     margin: 1vh 30%;
 }
-
+*/
 #kapcsolat span{
     color: red;
 }
@@ -557,9 +575,9 @@ footer .kapcsolat-container .email #email{
     }
 }
 
-@media (max-width:500px){
+@media (max-width:400px){
     #szolgal h1{
-        font-size: 30px;
+        font-size: 25px;
     }
     #szolgal ul{
         width: 98%;
@@ -568,8 +586,21 @@ footer .kapcsolat-container .email #email{
     #szolgal ul li{
         margin: 1vh 1%;
     }
+    #projektek h1{
+        font-size: 30px;
+    }
+    #galeria h1{
+        font-size: 30px;
+    }
     #galeria .galeria-div img{
         height: 25vh;
         padding: 1vh;
+    }
+    #kapcsolat h1{
+        font-size: 30px;
+    }
+    #kapcsolat form input::placeholder,  
+    #kapcsolat form textarea::placeholder{
+        font-size: 12px;
     }
 }

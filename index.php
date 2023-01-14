@@ -29,7 +29,7 @@
                 <h1>Lorem ipsum sit damet.</h1>
                 <p>Lorem ipsum<br>
                 Lorem ipsum sit damet lorem ipsum.</p>
-                <a href="https://www.tesla.com/hu_hu" target="blank"><button>Klikk ide!</button></a>
+                <a href="http://localhost/webdes/index.php" target="blank"><button>Klikk ide!</button></a>
             </div>
 
             <div class="img"><img src="media/bemutkep.png"></div>
